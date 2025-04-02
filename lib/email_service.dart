@@ -1,8 +1,9 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class SendEmailService {
-  final String sendGridApiKey = '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';
+  final String sendGridApiKey = dotenv.env['SEND_GRID_APIKEY']!;
 
   // Function to send email to the mentor
   Future<void> sendEmail(String mentorEmail, String data) async {
